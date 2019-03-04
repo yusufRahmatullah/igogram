@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "IGOgram",
+    "version": "0.1.0",
+    "description": "Extension for Instagram that check whether the IG is on Wikipedigolang",
+    "icons": {
+        "48": "favicon.ico",
+        "96": "favicon.ico"
+    },
+    "browser_action": {
+        "default_icon": "favicon.ico"
+    },
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "https://wikipedigolang.herokuapp.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["*://www.instagram.com/*"],
+            "js": ["igogram.js"]        
+        }
+    ],
+    "applications": {
+        "gecko": {
+          "id": "igogram@wikipedigolang.herokuapp.com"
+        }
+      }
+}
