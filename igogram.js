@@ -1,12 +1,14 @@
+const wikiHost = 'https://wikipedigolang.herokuapp.com';
+
 function checkWikipedigolang(igId) {
-    fetch('https://wikipedigolang.herokuapp.com/api/igprofile/'+igId)
+    fetch(wikiHost+'/api/igprofile/'+igId)
         .then(res => res.json())
         .then(json => {
             var n = document.querySelector('h1')
             if (json.data) {
                 n.innerHTML += ' (added)';
             } else {
-                n.innerHTML += ' (not added)';
+                n.innerHTML += ` <a href="`+wikiHost+`/jobs?ig_id=`+igId+`" target="_blank">(not added)</a>`;
             }
         })
         .catch(err => console.error(err));
