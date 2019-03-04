@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "IGOgram",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Extension for Instagram that check whether the IG is on Wikipedigolang",
     "icons": {
         "48": "favicon.ico",

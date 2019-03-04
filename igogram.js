@@ -5,10 +5,11 @@ function checkWikipedigolang(igId) {
         .then(res => res.json())
         .then(json => {
             var n = document.querySelector('h1')
+            var v = n.innerHTML;
             if (json.data) {
-                n.innerHTML += ' (added)';
+                n.innerHTML = '&#x2713; '+v;
             } else {
-                n.innerHTML += ` <a href="`+wikiHost+`/jobs?ig_id=`+igId+`" target="_blank">(not added)</a>`;
+                n.innerHTML = `<a href="`+wikiHost+`/jobs?ig_id=`+igId+`" target="_blank">(add) </a>`+v;
             }
         })
         .catch(err => console.error(err));
